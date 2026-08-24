@@ -86,7 +86,10 @@ public final class BedrockMenuBridge extends JavaPlugin implements Listener {
             form.button(button.label(), FormImage.Type.PATH, texturePath(button.item().getType()),
                     ignored -> Bukkit.getScheduler().runTask(this, () -> replayClick(player, inventory, button.slot())));
         }
-        FloodgateApi.getInstance().sendForm(player.getUniqueId(), form);
+        // Pass the finished form, rather than relying on Floodgate's builder
+        // overload. This keeps the call compatible with all current Floodgate
+        // implementations and ensures callbacks are retained.
+        FloodgateApi.getInstance().sendForm(player.getUniqueId(), form.build());
     }
 
     private void replayClick(Player player, Inventory inventory, int slot) {
