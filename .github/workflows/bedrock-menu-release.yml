@@ -1,0 +1,25 @@
+name: Build Bedrock Menu Bridge release
+
+on:
+  push:
+    tags: ['bedrock-v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - run: mvn --batch-mode --no-transfer-progress -f BedrockMenuBridge/pom.xml clean package
+      - name: Publish JAR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: gh release create "$TAG" BedrockMenuBridge/target/BedrockMenuBridge.jar#BedrockMenuBridge.jar --title "BedrockMenuBridge $TAG" --generate-notes
