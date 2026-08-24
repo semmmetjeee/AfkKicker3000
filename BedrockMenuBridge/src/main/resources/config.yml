@@ -1,0 +1,16 @@
+# Only virtual inventories are converted by default. Physical containers are left alone.
+virtual-menus-only: true
+
+# Regex filters, matched against the plain menu title. Keep include as '.*' to convert
+# every virtual plugin menu, including DeluxeMenus. Put a title here to skip it.
+include-titles:
+  - '.*'
+exclude-titles: []
+
+# Images use the vanilla Bedrock resource-pack path automatically. Override exceptions
+# here when a Java material has a different Bedrock texture name.
+icon-overrides:
+  PLAYER_HEAD: textures/items/skull
+
+# If an inventory has no display name, this title is used for its form.
+fallback-title: Menu
