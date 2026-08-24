@@ -1,0 +1,7 @@
+name: BedrockMenuBridge
+version: 1.0.0
+main: nl.semmmetjeee.bedrockmenubridge.BedrockMenuBridge
+api-version: '1.21'
+author: semmmetjeee
+description: Turns virtual Java menus into Bedrock forms through Floodgate.
+depend: [floodgate]
