@@ -1,27 +1,11 @@
-# AfkKicker3000
+# BedrockMenuBridge
 
-Een strikte Paper anti-AFK plugin. Spelers krijgen na **19 minuten** een waarschuwing en worden na **20 minuten** gekickt.
+Paper-plugin voor Geyser en Floodgate. Het zet virtuele servermenu's, inclusief DeluxeMenus, voor Bedrock-spelers om naar native Bedrock Forms.
 
-De timer reset alleen door voldoende horizontaal te verplaatsen. Dus chatten, omkijken, springen op dezelfde plek, auto-clickers en stil AFK minen houden iemand niet online. De ingebouwde lusdetectie voorkomt bovendien dat kleine AFK-pools met een herhaald rondje de timer blijven resetten.
+- Iedere huidige menu-slot wordt automatisch een knop met naam, lore en Bedrock-itemicoon.
+- Bijvoorbeeld: DIAMOND gebruikt textures/items/diamond.
+- Een keuze simuleert een normale Bukkit left-click, zodat DeluxeMenus commands, requirements en permissions zelf afhandelt.
 
-## Builden
+Vereist: Paper 1.21.4+, Geyser en Floodgate op dezelfde backend-server.
 
-Vereist Java 21 en Maven:
-
-```bash
-mvn package
-```
-
-Plaats daarna `target/AfkKicker3000.jar` in de `plugins`-map van een Paper 1.21.4-server en herstart de server.
-
-## Instellen
-
-Alle timings en detectiedrempels staan in `plugins/AfkKicker3000/config.yml`. De standaardwaarden zijn 1140 seconden (waarschuwing) en 1200 seconden (kick).
-
-Commands:
-
-- `/afk` toont de resterende tijd.
-- `/afk reset` reset de eigen timer (permission `afkkicker.reset`).
-- `/afk reload` herlaadt de configuratie (permission `afkkicker.reload`).
-
-Operators hebben standaard `afkkicker.bypass` en worden niet gecontroleerd.
+Build met: mvn clean package. De JAR is target/BedrockMenuBridge.jar.

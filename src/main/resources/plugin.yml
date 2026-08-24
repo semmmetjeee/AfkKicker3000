@@ -1,20 +1,7 @@
-name: AfkKicker3000
+name: BedrockMenuBridge
 version: 1.0.0
-main: nl.semmmetjeee.afkkicker3000.AfkKicker3000
+main: nl.semmmetjeee.bedrockmenubridge.BedrockMenuBridge
 api-version: '1.21'
 author: semmmetjeee
-description: Strict movement-based AFK detection for Paper.
-commands:
-  afk:
-    description: View or manage AFK timers.
-    usage: /afk [status|reset|reload]
-permissions:
-  afkkicker.bypass:
-    description: Exempts a player from AFK checks.
-    default: op
-  afkkicker.reset:
-    description: Reset your own AFK timer.
-    default: true
-  afkkicker.reload:
-    description: Reload AfkKicker3000.
-    default: op
+description: Turns virtual Java menus into Bedrock forms through Floodgate.
+depend: [floodgate]
