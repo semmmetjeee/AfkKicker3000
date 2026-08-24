@@ -1,0 +1,19 @@
+# A player is warned at 19 minutes and kicked at 20 minutes by default.
+warning-after-seconds: 1140
+kick-after-seconds: 1200
+check-interval-seconds: 2
+
+# Rotation, jumping in place, clicking, mining, chat, damage and vehicles never reset the timer.
+# A player must make this much horizontal progress before their timer is reset.
+minimum-horizontal-movement: 2.0
+
+# Enable a conservative loop heuristic. Returning repeatedly to a recently visited
+# location is treated as an AFK pool, so it does not keep the player alive.
+detect-repeating-paths: true
+path-memory-seconds: 90
+repeat-location-radius: 0.75
+repeats-before-blocking-reset: 3
+
+warning-message: '&eYou have been inactive for 19 minutes. Move now or you will be kicked in 1 minute.'
+kick-message: '&cKicked for being AFK for 20 minutes.'
+status-message: '&7AFK kick in: &f{seconds}s'
